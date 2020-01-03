@@ -1,17 +1,18 @@
 // swift-tools-version:5.1
+
 import PackageDescription
 
 let package = Package(
     name: "Validator",
-    platforms: [
-        .macOS(.v10_13), .iOS(.v11), .tvOS(.v11),
-    ],
+    platforms: [.iOS(.v8), .macOS(.v10_10), .tvOS(.v9)],
     products: [
-        .library(name: "Validator", targets: ["Validator"]),
+        .library(
+            name: "Validator",
+            targets: ["Validator"])
     ],
-    dependencies: [],
     targets: [
-        .target(name: "Validator", dependencies: [], path: "Validator/Sources"),
-        .testTarget(name: "ValidatorTests", dependencies: ["Validator"], path: "Validator/ValidatorTests"),
+        .target(
+            name: "Validator",
+            path: "Validator/Sources")
     ]
 )
